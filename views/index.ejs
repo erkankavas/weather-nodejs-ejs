@@ -1,0 +1,38 @@
+<%- include("header.ejs"); %>
+
+<div class="alert alert-secondary mt-5 text-center" role="alert">
+
+<% if (data.name == undefined) { %>
+
+  <h4>Sorry :(</h4>
+  <img src="panda.jpg"><br /><br /><br />
+
+  <% }else { %>
+
+<h4><%= data.name %></h4>
+<p>Temp : <%= data.main.temp %></p>
+
+<% if (data.main.temp >= 30) { %>
+  <p> More than Normal Feel :(</p>
+  <%} else { %>
+  <p> Normal Feel :)</p>
+  <% } %>
+
+<p>Feels Like : <%= data.main.feels_like %></p>
+<p>Temp Min : <%= data.main.temp_min %></p>
+<p>Temp Max : <%= data.main.temp_max %></p>
+<p>Pressure : <%= data.main.pressure %></p>
+<p>Humidity : <%= data.main.humidity %></p>
+
+<% } %>
+
+<form name="xxx" method="get">
+
+  <input type="text" name="city" value="" /><br /><br />
+  <input type="submit" value="Search City"/><br />
+ 
+</form>
+
+</div>
+
+<%- include("footer.ejs"); %>
